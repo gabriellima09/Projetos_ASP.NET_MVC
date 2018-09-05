@@ -1,0 +1,127 @@
+﻿@model E_SalesLojaVirtual.Models.CarrinhoDeCompras.Carrinho
+
+@{
+    ViewBag.Title = "Meu Carrinho";
+}
+
+<style>
+    td {
+        border: 2px solid darkgray;
+        border-style: groove;
+        text-align: center;
+    }
+
+    text {
+        margin-top: 15px;
+    }
+</style>
+
+<h2>Meu Carrinho</h2>
+
+<div>
+    <br />
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+        <li>@Html.ActionLink("Continuar comprando", "Index", "Departamentos")</li>
+    </ol>
+</div>
+
+
+<form action="/Pedidos/FinalizarCompra" method="post">
+    <div class="panel panel-default">
+        <div class="form-horizontal">
+            <div class="panel-body">
+                <div class="container">
+                    <div class="panel panel-info">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <address>
+                                <p>Entregar para: @Model.cliente.nome @Model.cliente.sobrenome</p>
+                                <p>Endereço: @Model.cliente.endereco</p>
+                                <p>Prazo: 7-9 dias úteis</p>
+                                <hr style="border: 1px solid;" />
+                                <p>Meus Produtos:</p>
+                            </address>
+                        </div>
+                        @if (Model.produtos != null & Model.produtos.Count() > 0)
+                        {
+                            <!-- Table -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td><label>Imagem</label></td>
+                                        <td><label>Descrição</label></td>
+                                        <td><label>Preço R$</label></td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @for (int i = 0; i < Model.produtos.Count(); i++)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <img src="@Model.produtos[i].imagem" alt="@Model.produtos[i].descricao" style="width: 40px;height: 40px;">
+                                            </td>
+                                            <td>
+                                                <text>@Model.produtos[i].descricao</text>
+                                            </td>
+                                            <td>
+                                                <text>@String.Format("{0:0.00}", Model.produtos[i].valor)</text>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger btnRemover" data-idProduto="@Model.produtos[i].id">Remover</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" style="text-align:right">Total: </td>
+                                        @{
+                                            double total = 0;
+
+                                            foreach (var item in Model.produtos)
+                                            {
+                                                total += item.valor;
+                                            }
+                                        }
+                                        <td>
+                                            @String.Format("{0:0.00}", total)
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+                        else
+                        {
+                            <div class="form-horizontal form-control">
+                                <span>Carrinho vazio</span>
+                            </div>
+                        }
+                    </div>
+                    @if (Model.produtos.Count > 0)
+                    {
+                        <button class="btn btn-success" type="submit" style="float:right">Finalizar Compra</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $(".btnRemover").unbind().click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Carrinho/RemoverProduto/',
+                data: { 'idProduto': $(this).attr('data-idProduto') },
+                dataType: 'json',
+                success: function (data) {
+                    location.reload();
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Validator.css")
+    @Styles.Render("~/Content/Utils.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color: #A8A8A8;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/Home/Index">
+                    <img src="~/img/logo.jpg" width="75" height="50" style="float:left" />
+                </a>
+                @*@Html.ActionLink("E-Sales", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Departamentos", "Index", "Departamentos")</li>
+                    @*<li>@Html.ActionLink("Devoluções", "Devolucoes", "Home")</li>*@
+                </ul>
+
+                @if (Session["Carrinho"] == null)
+                {
+                    <ul class="nav navbar-nav" style="float:right">
+                        <li>@Html.ActionLink("Cadastre-se", "CadastrarCliente", "AutenticacaoCliente")</li>
+                        <li>@Html.ActionLink("Login", "LoginCliente", "AutenticacaoCliente")</li>
+                    </ul>
+                }
+                else
+                {
+                    Html.RenderAction("VerificaSessaoCliente", "AutenticacaoCliente");
+                }
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - E-Sales</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/all")
+    @*@RenderSection("scripts", required: false)*@
+
+</body>
+</html>

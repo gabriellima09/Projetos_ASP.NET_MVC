@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<div>
+    <ul class="nav navbar-nav" style="float:right">
+        <li class="btn-group">
+            <button class="btnCarrinnho btn btn-md btn-info glyphicon glyphicon-shopping-cart" style="margin-top: 12px;margin-right: 15px;"></button>
+        </li>
+
+        <li class="btn-group">
+            <button id="MenuOpcoes" type="button" style="margin-top: 20%;"
+                    class="btn btn-default dropdown-toggle glyphicon glyphicon-user"
+                    data-toggle="dropdown" aria-haspopup="true" data-placement="left" aria-expanded="false">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Meu Carrinho", "Index", "Carrinho")</li>
+                <li>@Html.ActionLink("Meus Pedidos", "Pedidos", "Pedidos")</li>
+                <li>@Html.ActionLink("Redefinir Senha", "RedefinirSenha", "AutenticacaoCliente")</li>
+                <li role="separator" class="divider"></li>
+                <li>@Html.ActionLink("Sair", "LogoutCliente")</li>
+            </ul>
+        </li>
+        <li><a onclick="abreMenu();">Bem vindo, @ViewBag.NomeCliente.</a></li>
+    </ul>
+</div>

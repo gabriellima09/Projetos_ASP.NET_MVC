@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Clientes>
+  <cliente id="0" nome="Gabriel" sobrenome="Lima Gomes" email="gabriellimagomes.14@hotmail.com" endereco="Rua Cubatão, 130 - Sesc, Suzano" senha="123" />
+  <cliente id="1" nome="Fatec" sobrenome="MC" email="fatec@fatec.com" endereco="Rua Carlos Baratinno" senha="123" />
+  <cliente id="2" nome="Rogério" sobrenome="Sobral" email="sobral@gmail.com" endereco="Rua Antonio" senha="123" />
+</Clientes>

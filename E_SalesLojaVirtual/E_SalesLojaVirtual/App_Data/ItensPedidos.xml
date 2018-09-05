@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ItensPedidos>
+  <itensPedido id="2" descricao="Câmbio" valor="78" idTipo="0" imagem="/Imagens/Carro/Cambio.jpg" idPedido="20180613191005" idCliente="0" />
+  <itensPedido id="63" descricao="Calça" valor="60" idTipo="3" imagem="/Imagens/Infantil/Calça.jpg" idPedido="20180613191005" idCliente="0" />
+  <itensPedido id="82" descricao="Notebook" valor="2700" idTipo="4" imagem="/Imagens/Informatica/notebook.jpg" idPedido="20180613191013" idCliente="0" />
+  <itensPedido id="122" descricao="Camiseta" valor="30" idTipo="6" imagem="/Imagens/Masculino/Camiseta.jpg" idPedido="20180613191032" idCliente="0" />
+  <itensPedido id="106" descricao="Português" valor="270" idTipo="5" imagem="/Imagens/Livros/Portugues.jpg" idPedido="20180613191032" idCliente="0" />
+  <itensPedido id="5" descricao="Motor" valor="5000" idTipo="0" imagem="/Imagens/Carro/Motor.jpg" idPedido="20180613191032" idCliente="0" />
+  <itensPedido id="1" descricao="Volante" valor="37" idTipo="0" imagem="/Imagens/Carro/Volante.jpg" idPedido="20180613193306" idCliente="1" />
+  <itensPedido id="105" descricao="As Aventuras de Pi" valor="200" idTipo="5" imagem="/Imagens/Livros/AsAventurasdePi.jpg" idPedido="20180613205206" idCliente="0" />
+  <itensPedido id="1" descricao="Volante" valor="37" idTipo="0" imagem="/Imagens/Carro/Volante.jpg" idPedido="20180614192258" idCliente="0" />
+  <itensPedido id="101" descricao="Mitologia" valor="49" idTipo="5" imagem="/Imagens/Livros/Mitologia.jpg" idPedido="20180618153916" idCliente="0" />
+  <itensPedido id="82" descricao="Notebook" valor="2700" idTipo="4" imagem="/Imagens/Informatica/notebook.jpg" idPedido="20180618153916" idCliente="0" />
+  <itensPedido id="58" descricao="Chapinha" valor="340" idTipo="2" imagem="/Imagens/Feminino/Chapinha.jpg" idPedido="20180709202305" idCliente="0" />
+</ItensPedidos>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<E_SalesLojaVirtual.Models.Produtos.Produto>
+
+@{
+    ViewBag.Title = "Masculino - E-Sales";
+
+    int i = 0;
+}
+
+<h2>Masculino</h2>
+
+<div>
+    <br />
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+        <li>@Html.ActionLink("Departamentos", "Index", "Departamentos")</li>
+        <li class="active">@ViewBag.Departamento</li>
+    </ol>
+</div>
+
+
+<div class="panel panel-default">
+    <div class="form-horizontal">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h3>Selecione um Produto: </h3>
+                <hr />
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="container">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3" style="padding-bottom:25px">
+                            <a class="thumbnail click" href="#">
+                                <form id="@string.Concat("FormProduto", i)" action="/Produtos/Info" method="post">
+                                    @Html.HiddenFor(x => item.id)
+                                    @Html.HiddenFor(x => item.idTipo)
+                                    @Html.HiddenFor(x => item.descricao)
+                                    @Html.HiddenFor(x => item.valor)
+                                    @Html.HiddenFor(x => item.imagem)
+                                    <img src="@item.imagem" alt="@item.descricao" style="width: 230px;height: 200px;">
+                                    <hr />
+                                    <div class="caption">
+                                        <p><label>@item.descricao</label></p>
+                                        <p>Preço: @String.Format("{0:0.00}", item.valor) R$</p>
+                                        <button class="btn btn-primary col-lg-12 col-md-12 col-sm-12 col-xs-12" type="submit">Ver Produto</button>
+                                    </div>
+                                </form>
+                            </a>
+                        </div>
+                        i = i + 1;
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

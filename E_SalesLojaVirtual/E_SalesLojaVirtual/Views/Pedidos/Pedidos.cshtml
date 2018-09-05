@@ -1,0 +1,114 @@
+﻿@model IEnumerable<E_SalesLojaVirtual.Models.Pedidos.Pedido>
+
+@{
+    ViewBag.Title = "Meus Pedidos";
+
+    int index = 0;
+}
+
+<style>
+    tr {
+        border-top: 2px solid darkgray;
+    }
+
+    td {
+        border: 2px solid darkgray;
+        border-style: groove;
+        text-align: center;
+    }
+
+    text {
+        margin-top: 15px;
+    }
+</style>
+
+<h2>Meus Pedidos</h2>
+
+<div>
+    <br />
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+    </ol>
+</div>
+
+<div class="panel panel-default">
+    <div class="form-horizontal">
+        <div class="panel-body">
+            <div class="container">
+                <div class="panel panel-info">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Meus Pedidos: </div>
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <!-- Table -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>Nº Pedido</td>
+                                        <td><label>Imagem</label></td>
+                                        <td><label>Descrição</label></td>
+                                        <td><label>Preço R$</label></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @for (int i = 0; i < item.carrinho.produtos.Count(); i++)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <text>@item.id</text>
+                                            </td>
+                                            <td>
+                                                <img src="@item.carrinho.produtos[i].imagem" alt="@item.carrinho.produtos[i].descricao" style="width: 40px;height: 40px;">
+                                            </td>
+                                            <td>
+                                                <text>@item.carrinho.produtos[i].descricao</text>
+                                            </td>
+                                            <td>
+                                                <text>@String.Format("{0:0.00}", item.carrinho.produtos[i].valor)</text>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" style="text-align:right">Valor Total Pedido: </td>
+                                        @{
+                                            double total = 0;
+
+                                            foreach (var item2 in item.carrinho.produtos)
+                                            {
+                                                total += item2.valor;
+                                            }
+                                        }
+                                        <td>
+                                            @String.Format("{0:0.00}", total)
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                            <br />
+                        }
+                    }
+                    else
+                    {
+                        <div class="form-horizontal form-control">
+                            <span>Sem pedidos realizados</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script>
+        $.ajax({
+            type: "POST",
+            url: "/Pedidos/ZerarCarrinho/",
+            dataType: "Json"
+        });
+    </script>*@

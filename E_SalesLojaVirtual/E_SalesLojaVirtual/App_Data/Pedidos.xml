@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Pedidos>
+  <pedido id="20180613191005" valorPedido="138" dataPedido="13/06/2018 19:10:05" idCliente="0" />
+  <pedido id="20180613191013" valorPedido="2700" dataPedido="13/06/2018 19:10:13" idCliente="0" />
+  <pedido id="20180613191032" valorPedido="5300" dataPedido="13/06/2018 19:10:32" idCliente="0" />
+  <pedido id="20180613193306" valorPedido="37" dataPedido="13/06/2018 19:33:06" idCliente="1" />
+  <pedido id="20180613205206" valorPedido="200" dataPedido="13/06/2018 20:52:06" idCliente="0" />
+  <pedido id="20180614192258" valorPedido="37" dataPedido="14/06/2018 19:22:58" idCliente="0" />
+  <pedido id="20180618153916" valorPedido="2749" dataPedido="18/06/2018 15:39:16" idCliente="0" />
+  <pedido id="20180709202305" valorPedido="340" dataPedido="09/07/2018 20:23:05" idCliente="0" />
+</Pedidos>

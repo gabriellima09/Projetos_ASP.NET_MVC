@@ -1,0 +1,82 @@
+﻿@model E_SalesLojaVirtual.Models.Produtos.Produto
+
+@{
+    ViewBag.Title = Model.descricao + " - E-Sales - A sua loja online";
+}
+
+<h2>Produtos</h2>
+
+<div>
+    <br />
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+        <li>@Html.ActionLink("Departamentos", "Index", "Departamentos")</li>
+        <li>@Html.ActionLink((string)ViewBag.Departamento, (string)ViewBag.Departamento, "Departamentos")</li>
+        <li class="active">Informações</li>
+    </ol>
+</div>
+
+<form id="formProduto" action="/Produtos/AdicionarCarrinho" method="post">
+    <div class="panel panel-default">
+        <div class="form-horizontal">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h3>Informações do produto</h3>
+                    <hr>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="container">
+                    <div class="row col-md-12">
+                        <div class="col-md-6">
+                            <div class="thumbnail col-md-6">
+                                @Html.HiddenFor(x => Model.id)
+                                @Html.HiddenFor(x => Model.idTipo)
+                                @Html.HiddenFor(x => Model.descricao)
+                                @Html.HiddenFor(x => Model.valor)
+                                @Html.HiddenFor(x => Model.imagem)
+                                <a href="#">
+                                    <img src="@Model.imagem" alt="@Model.descricao" style="width: 230px;height: 200px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 panel panel-default" style="float:right">
+                            <h3>@Model.descricao</h3>
+                            <hr />
+                            <div class="col-md-12">
+                                <label>Preço: @String.Format("{0:0.00}", Model.valor) R$</label>
+                                <button type="submit" class="btn btn-success" style="float:right">Comprar</button>
+                            </div>
+                            <hr />
+                            <!-- Frete -->
+                            <div class="form-group">
+                                <div class="form-horizontal col-md-12" style="padding-right: 0;">
+                                    <div class="row col-md-12">
+                                        <div class="col-md-4">
+                                            <label class="control-label">Calcular frete:</label>
+                                        </div>
+                                        <div class="row col-md-6">
+                                            <input id="frete" class="form-control" type="text" name="frete" value="" maxlength="9"/>
+                                            <label id="lblFrete" class="control-label" style="color: #4cae4c;display:none">Grátis - Prazo de 7-9 dias úteis</label>
+                                        </div>
+                                        <button id="btnCalcularFrete" type="button" class="btn btn-default" style="float:right">Calcular</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function (){
+        $("#btnCalcularFrete").click(function () {
+            if ($("#frete").val() != "") {
+                $("#lblFrete").show();
+            }
+        });
+    });
+</script>

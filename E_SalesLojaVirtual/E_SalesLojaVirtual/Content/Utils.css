@@ -1,0 +1,13 @@
+﻿.alinharCentro {
+    text-align: center;
+}
+
+.thumbnail > img {
+    max-width: 235px !important;
+    max-height: 150px !important;
+}
+
+.marginTop5px {
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+}

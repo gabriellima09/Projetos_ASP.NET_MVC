@@ -1,0 +1,79 @@
+﻿@model E_SalesLojaVirtual.Models.AutenticacaoCliente.Cliente
+
+@{
+    ViewBag.Title = "Cadastro - E-Sales - A sua loja online";
+}
+
+<h2>Cadastro de Cliente</h2>
+
+<div>
+    <br />
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+        <li class="active">Cadastro de Cliente</li>
+    </ol>
+</div>
+
+<div class="panel panel-default">
+    <div class="form-horizontal">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="container">
+                @using (Html.BeginForm("CadastrarCliente", "AutenticacaoCliente", FormMethod.Post, new { @Id = "FormCadastroCliente" }))
+                {
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Nome: </label>
+                        @Html.TextBoxFor(x => x.nome, new { @class = "form-control" })
+                        <label class="control-label col-md-2"></label>
+                        @Html.ValidationMessageFor(x => x.nome)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Sobrenome: </label>
+                        @Html.TextBoxFor(x => x.sobrenome, new { @class = "form-control" })
+                        <label class="control-label col-md-2"></label>
+                        @Html.ValidationMessageFor(x => x.sobrenome)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Email: </label>
+                        @Html.TextBoxFor(x => x.email, new { @class = "form-control", @type = "email" })
+                        <label class="control-label col-md-2"></label>
+                        @Html.ValidationMessageFor(x => x.email)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Endereço: </label>
+                        @Html.TextBoxFor(x => x.endereco, new { @class = "form-control", @type = "text" })
+                        <label class="control-label col-md-2"></label>
+                        @Html.ValidationMessageFor(x => x.endereco)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Senha: </label>
+                        @Html.TextBoxFor(x => x.senha, new { @class = "form-control", @type = "password" })
+                        <label class="control-label col-md-2"></label>
+                        @Html.ValidationMessageFor(x => x.senha)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Confirmar senha: </label>
+                        @Html.TextBoxFor(x => x.confirmarSenha, new { @class = "form-control", @type = "password" })
+                        <label class="control-label col-md-2"></label>
+                        @Html.ValidationMessageFor(x => x.confirmarSenha)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2"></label>
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

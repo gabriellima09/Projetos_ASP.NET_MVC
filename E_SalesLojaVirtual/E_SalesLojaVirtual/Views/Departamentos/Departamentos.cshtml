@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Departamentos";
+}
+
+<h2>Departamentos</h2>
+
+<div>
+    <br />
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+        <li class="active">Departamentos</li>
+    </ol>
+</div>
+
+<div id="divDeptos">
+    @Html.Action("PV_Departamentos","Departamentos")
+</div>

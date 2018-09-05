@@ -1,0 +1,71 @@
+﻿@model E_SalesLojaVirtual.Models.AutenticacaoCliente.Cliente
+
+@{
+    ViewBag.Title = "Login - E-Sales - A sua loja online";
+}
+
+<h2>Login de Cliente</h2>
+
+<div>
+    <br />
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+        <li class="active">Login de Cliente</li>
+    </ol>
+</div>
+
+<div class="panel panel-default">
+    <div class="form-horizontal">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="container">
+                @using (Html.BeginForm("LoginCliente", "AutenticacaoCliente", FormMethod.Post, new { @Id = "FormLoginCliente" }))
+                {
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Email: </label>
+                        @Html.TextBoxFor(x => x.email, new { @class = "form-control", @type = "email" })
+                        <label class="control-label col-md-2"></label>
+                        @Html.ValidationMessageFor(x => x.email)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Senha: </label>
+                        @Html.TextBoxFor(x => x.senha, new { @class = "form-control", @type = "password" })
+                        <label class="control-label col-md-2"></label>
+                        @Html.ValidationMessageFor(x => x.senha)
+                    </div>
+
+                    if (ViewBag.Cliente != null)
+                    {
+                        <div class="form-group">
+                            <label class="control-label col-md-2"></label>
+                            <label class="control-label" style="color:red">
+                                Email e/ou Senha incorreto(s) ...
+                            </label>
+                        </div>
+                    }
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2"></label>
+                        <button class="btn btn-primary" type="submit">Entrar</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2"></label>
+                        @Html.ActionLink("Ainda não tem conta? Cadastre-se", "CadastrarCliente", "AutenticacaoCliente")
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2"></label>
+                        @Html.ActionLink("Esqueceu sua senha?", "RedefinirSenha", "AutenticacaoCliente")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

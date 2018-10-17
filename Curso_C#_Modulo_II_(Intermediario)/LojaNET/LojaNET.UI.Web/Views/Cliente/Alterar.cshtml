@@ -1,0 +1,32 @@
+﻿@model LojaNet.Models.Cliente
+
+@{
+    ViewBag.Title = "Alterar Cliente";
+}
+
+<h2>Alterar Cliente</h2>
+
+<hr />
+
+@using (Html.BeginForm("Alterar", "Cliente", FormMethod.Post, new { @id = "FormCliente", @class = "form-vertical" }))
+{
+
+    @Html.ValidationSummary(null, new { @class = "text-danger" })
+
+    @Html.HiddenFor(x => Model.id)
+
+    <div class="form-group">
+        <label class="control-label" for="nome">Nome: </label>
+        @Html.TextBoxFor(x => Model.nome, new { @class = "form-control", @placeholder = "Digite o nome" })
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="telefone">Telefone: </label>
+        @Html.TextBoxFor(x => Model.telefone, new { @type = "tel", @class = "form-control", @placeholder = "Digite o telefone" })
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="email">Email: </label>
+        @Html.TextBoxFor(x => Model.email, new { @type = "email", @class = "form-control", @placeholder = "Digite o email" })
+    </div>
+
+    <button class="btn btn-success" type="submit">Salvar</button>
+}

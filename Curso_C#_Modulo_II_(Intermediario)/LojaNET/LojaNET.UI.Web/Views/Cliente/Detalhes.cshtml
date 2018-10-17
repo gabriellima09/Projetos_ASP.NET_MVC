@@ -1,0 +1,49 @@
+﻿@model LojaNet.Models.Cliente
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Dados do Cliente</h2>
+
+<hr />
+
+<div class="form-vertical">
+    <dl>
+        <dt>
+            Código: 
+        </dt>
+        <dd>
+            @Model.id
+        </dd>
+
+        <dt>
+            Nome:
+        </dt>
+        <dd>
+            @Model.nome
+        </dd>
+
+        <dt>
+            Email:
+        </dt>
+        <dd>
+            @Model.email
+        </dd>
+
+        <dt>
+            Telefone: 
+        </dt>
+        <dd>
+            @Model.telefone
+        </dd>
+    </dl>
+
+    <hr />
+
+    <div class="btn-group">
+        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Alterar", "Alterar", new { id = Model.id }, new { @class = "btn btn-warning" })
+        @Html.ActionLink("Excluir", "Excluir", new { id = Model.id }, new { @class = "btn btn-danger" })
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model LojaNet.Models.Cliente
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<hr />
+
+<h4>Confirmar a exclusão desse cliente ?</h4>
+
+<p>
+    @Model.nome
+</p>
+
+<hr />
+
+@using (Html.BeginForm("Excluir", "Cliente", FormMethod.Post, new { id = Model.id, form = Model }))
+{
+    <div class="btn-group">
+        @Html.ActionLink("Voltar", "Detalhes", new { id = Model.id }, new { @class = "btn btn-default" })
+        <input type="submit" value="Excluir" class = "btn btn-danger" />
+    </div>
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Web;
 using LojaNet.Models;
 using LojaNET.DAL;
 
@@ -8,6 +9,8 @@ namespace LojaNet.DAL
 {
     public class ClienteDAL : ICliente
     {
+        private readonly string pathSerializacao = HttpContext.Current.Server.MapPath(@"~\App_Data\Clientes_Excluidos\");
+
         public void Alterar(Cliente cliente)
         {
             DBHelper.ExecuteNonQuery("SP_CLIENTE_UPDATE",
@@ -20,6 +23,10 @@ namespace LojaNet.DAL
 
         public void Excluir(string id)
         {
+            Cliente cliente = ObterPorId(id);
+
+            SerializadorHelper.Serializar(string.Concat(pathSerializacao, id,".xml"), cliente);
+
             DBHelper.ExecuteNonQuery("SP_CLIENTE_DELETE", "@id", id);
         }
 

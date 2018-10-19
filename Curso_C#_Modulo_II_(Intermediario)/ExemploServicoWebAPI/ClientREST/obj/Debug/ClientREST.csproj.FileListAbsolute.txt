@@ -1,0 +1,15 @@
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\bin\Debug\ClientREST.exe.config
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\bin\Debug\ClientREST.exe
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\bin\Debug\ClientREST.pdb
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\obj\Debug\ClientREST.csprojAssemblyReference.cache
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\obj\Debug\ClientREST.Properties.Resources.resources
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\obj\Debug\ClientREST.csproj.GenerateResource.cache
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\obj\Debug\ClientREST.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\obj\Debug\ClientREST.csproj.CopyComplete
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\obj\Debug\ClientREST.exe
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\obj\Debug\ClientREST.pdb
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWebAPI\ClientREST\obj\Debug\ClientREST.Form1.resources

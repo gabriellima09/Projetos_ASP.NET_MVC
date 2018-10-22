@@ -1,0 +1,241 @@
+﻿@model Teste_ASP.NET.UI.Models.VM_Cliente
+
+@using Teste_ASP.NET.Models;
+
+@{
+    ViewBag.Title = "Edição";
+}
+
+<h2>Editar Cliente</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Gestão de Clientes", "Index")</li>
+        <li class="breadcrumb-item active" aria-current="page">Editar</li>
+    </ol>
+</nav>
+
+<h4>Editar informações do Cliente</h4>
+
+<hr />
+
+@using (Html.BeginForm("Edit", "Cliente", FormMethod.Post, new { @id = "FormCliente" }))
+{
+    @Html.HiddenFor(x => Model.Id)
+
+    <!-- Tipo Pessoa -->
+    <div class="form-group">
+        <label class="control-label">Tipo de Pessoa: </label>
+        @Html.EnumDropDownListFor(x => x.TipoPessoa, new { @class = "form-control", @readonly = "readolny" })
+    </div>
+
+    if (Model.TipoPessoa == TipoPessoa.Fisica)
+    {
+        <!-- Física -->
+        <div id="ClientePF">
+            <div class="form-group">
+                <label class="control-label">Nome: </label>
+                @Html.TextBoxFor(x => Model.Nome, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label class="control-label">Sobrenome: </label>
+                @Html.TextBoxFor(x => Model.Sobrenome, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label class="control-label">CPF: </label>
+                @Html.TextBoxFor(x => Model.CPF, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data de Nascimento: </label>
+                <input class="form-control" type="date" id="DataNascimento" name="DataNascimento" value="@Model.DataNascimento.ToString("yyyy-MM-dd")" />
+                @*@Html.TextBoxFor(x => Model.DataNascimento, new { @value=Model.DataNascimento.ToString("yyyy-MM-dd"), @class = "form-control", @type = "date" })*@
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- Jurídica -->
+        <div id="ClientePJ">
+            <div class="form-group">
+                <label class="control-label">Razão Social: </label>
+                @Html.TextBoxFor(x => Model.RazaoSocial, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nome Fantasia: </label>
+                @Html.TextBoxFor(x => Model.NomeFantasia, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label class="control-label">CNPJ: </label>
+                @Html.TextBoxFor(x => Model.CNPJ, new { @class = "form-control" })
+            </div>
+        </div>
+    }
+
+    <!-- Endereço -->
+    <div class="form-group">
+        <label class="control-label">Logradouro: </label>
+        @Html.TextBoxFor(x => Model.Logradouro, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label class="control-label">Número: </label>
+        @Html.TextBoxFor(x => Model.Numero, new { @class = "form-control", @type = "number" })
+    </div>
+    <div class="form-group">
+        <label class="control-label">Complemento (opcional): </label>
+        @Html.TextBoxFor(x => Model.Complemento, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label class="control-label">CEP: </label>
+        @Html.TextBoxFor(x => Model.CEP, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label class="control-label">Bairro: </label>
+        @Html.TextBoxFor(x => Model.Bairro, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label class="control-label">Cidade: </label>
+        @Html.TextBoxFor(x => Model.Cidade, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label class="control-label">UF: </label>
+        @Html.EnumDropDownListFor(x => Model.UF, new { @class = "form-control" })
+    </div>
+
+    <div class="btn-group">
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+        <button id="btnSubmit" class="btn btn-success" type="submit">Editar</button>
+    </div>
+}
+
+@section Scripts {
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[name="CPF"]').mask("999.999.999-99");
+            $('[name="CNPJ"]').mask("99.999.999/9999-99");
+
+            $('[name="TipoPessoa"] option').each(function () {
+                if ($(this).val() != $('[name="TipoPessoa"] option:selected').val())
+                    $(this).remove();
+            });
+
+            $('[name="UF"] option').each(function () {
+                if ($(this).val() == '0')
+                    $(this).remove();
+            });
+
+            $.validator.addMethod("minAge", function (value, element, min) {
+                var today = new Date();
+                var birthDate = new Date(value);
+                var age = today.getFullYear() - birthDate.getFullYear();
+
+                if (age > min + 1) {
+                    return true;
+                }
+
+                var m = today.getMonth() - birthDate.getMonth();
+
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+
+                return age >= min;
+            }, "You are not old enough!");
+
+            $("#FormCliente").validate({
+                rules: {
+                    Nome: {
+                        required: function () { return $('[name="TipoPessoa"]').val() == 1 },
+                    },
+                    Sobrenome: {
+                        required: function () { return $('[name="TipoPessoa"]').val() == 1 },
+                        maxlength: 15
+                    },
+                    DataNascimento: {
+                        required: function () { return $('[name="TipoPessoa"]').val() == 1 },
+                        minAge: 19
+                    },
+                    CPF: {
+                        required: function () { return $('[name="TipoPessoa"]').val() == 1 },
+                    },
+
+                    RazaoSocial: {
+                        required: function () { return $('[name="TipoPessoa"]').val() == 2 },
+                    },
+                    NomeFantasia: {
+                        required: function () { return $('[name="TipoPessoa"]').val() == 2 },
+                    },
+                    CNPJ: {
+                        required: function () { return $('[name="TipoPessoa"]').val() == 2 },
+                    },
+
+                    CEP: {
+                        required: true,
+                        maxlength: 8
+                    },
+                    Logradouro: {
+                        required: true,
+                    },
+                    Numero: {
+                        required: true,
+                        number: true
+                    },
+                    //Complemento opcional
+                    Bairro: {
+                        required: true,
+                    },
+                    Cidade: {
+                        required: true,
+                    },
+                    UF: {
+                        required: true,
+                        rangelength: [1, 27]
+                    },
+                },
+                messages: {
+                    Nome: "* Nome é obrigatório",
+                    Sobrenome: {
+                        required: "* Sobrenome é obrigatório",
+                        maxlength: "* No máximo 15 caracteres"
+                    },
+                    CPF: "* CPF é obrigatório",
+                    DataNascimento: {
+                        required: "* Data de Nascimento é obrigatório",
+                        minAge: "* É preciso ter no mínimo 19 anos"
+                    },
+
+                    RazaoSocial: "* Razão Social é obrigatório",
+                    NomeFantasia: "* Nome Fantasia é obrigatório",
+                    CNPJ: "* CNPJ é obrigatório",
+
+                    CEP: {
+                        required: "* CEP é obrigatório",
+                        maxlength: "* No máximo 8 caracteres (sem pontos, traços ou espaços)"
+                    },
+                    Logradouro: {
+                        required: "* Logradouro é obrigatório",
+                    },
+                    Numero: {
+                        required: "* Número é obrigatório",
+                        number: "* Somente números"
+                    },
+                    //Complemento opcional
+                    Bairro: {
+                        required: "* Bairro é obrigatório",
+                    },
+                    Cidade: {
+                        required: "* Cidade é obrigatório",
+                    },
+                    UF: {
+                        required: "* UF é obrigatório",
+                        rangelength: "* Selecione uma opção"
+                    },
+                }
+            });
+        });
+    </script>
+}

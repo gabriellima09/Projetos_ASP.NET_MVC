@@ -1,0 +1,115 @@
+﻿@model Teste_ASP.NET.UI.Models.VM_Cliente
+
+@using Teste_ASP.NET.Models;
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Gestão de Clientes", "Index")</li>
+        <li class="breadcrumb-item active" aria-current="page">Detalhes</li>
+    </ol>
+</nav>
+
+<hr />
+
+<h4>Dados do Cliente</h4>
+
+<hr />
+
+<div class="form-vertical">
+
+    <div>
+        <dl>
+            <dt>
+                Código:
+            </dt>
+            <dd>
+                @Model.Id
+            </dd>
+
+            <dt>
+                Tipo de Pessoa:
+            </dt>
+            <dd>
+                @Model.TipoPessoa.ToString()
+            </dd>
+
+            @if (Model.TipoPessoa == TipoPessoa.Fisica)
+            {
+                <dt>
+                    Nome:
+                </dt>
+                <dd>
+                    @Model.Nome @Model.Sobrenome
+                </dd>
+                <dt>
+                    CPF:
+                </dt>
+                <dd>
+                    @Model.CPF
+                </dd>
+                <dt>
+                    Data de Nascimento:
+                </dt>
+                <dd>
+                    @Model.DataNascimento.ToString("dd/MM/yyyy")
+                </dd>
+            }
+            else
+            {
+                <dt>
+                    Razão Social:
+                </dt>
+                <dd>
+                    @Model.RazaoSocial
+                </dd>
+                <dt>
+                    Nome Fantasia:
+                </dt>
+                <dd>
+                    @Model.NomeFantasia
+                </dd>
+                <dt>
+                    CNPJ:
+                </dt>
+                <dd>
+                    @Model.CNPJ
+                </dd>
+            }
+
+            <dt>
+                Data de Cadastro:
+            </dt>
+            <dd>
+                @Model.DataCadastro.ToString("dd/MM/yyyy - hh:mm")
+            </dd>
+
+            <dt>
+                Endereço:
+            </dt>
+            <dd>
+                @string.Format("{0}, {1} {2} - {3} - {4}, {5} - {6}",
+                    Model.Logradouro,
+                    Model.Numero,
+                    Model.Complemento,
+                    Model.Bairro,
+                    Model.Cidade,
+                    Model.UF.ToString(),
+                    Model.CEP
+                    )
+            </dd>
+        </dl>
+    </div>
+    <hr />
+
+    <div class="btn-group">
+        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Alterar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+        @Html.ActionLink("Excluir", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+    </div>
+</div>

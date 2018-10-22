@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Teste_ASP.NET.UI.Models.VM_Cliente>
+
+@using Teste_ASP.NET.Models
+
+@{
+    ViewBag.Title = "Gestão de Clientes";
+}
+
+<h2>Gestão de Clientes</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Gestão de Clientes</li>
+    </ol>
+</nav>
+
+<div>
+    @Html.ActionLink("Cadastrar", "Create", "Cliente", new { @class="btn btn-primary" })
+</div>
+
+<hr />
+
+<table class="table table-bordered table-condensed table-hover table-responsive table-striped">
+    <thead>
+        <tr>
+            <td><label>Cliente</label></td>
+            <td><label>Tipo Pessoa</label></td>
+            <td><label>Data Cadastro</label></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderByDescending(x => x.DataCadastro))
+        {
+            <tr>
+                <td>
+                    @if (item.TipoPessoa == TipoPessoa.Fisica)
+                    {
+                        @Html.ActionLink(string.Concat(item.Nome, " ", item.Sobrenome), "Details", new { Id = item.Id })
+                    }
+                    else
+                    {
+                        @Html.ActionLink(item.RazaoSocial, "Details", new { Id = item.Id })
+                    }
+                </td>
+                <td>
+                    @item.TipoPessoa.ToString()
+                </td>
+                <td>
+                    @item.DataCadastro.ToString("dd/MM/yyyy - hh:mm")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

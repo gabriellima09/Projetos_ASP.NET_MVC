@@ -17,4 +17,3 @@ C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediari
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ClienteWCF\obj\Debug\ClienteWCF.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ClienteWCF\obj\Debug\ClienteWCF.exe
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ClienteWCF\obj\Debug\ClienteWCF.pdb
-C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ClienteWCF\obj\Debug\ClienteWCF.csprojAssemblyReference.cache

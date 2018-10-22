@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Cliente xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <id>2c82c78d-0aac-4d5c-a38e-4306f25ea55a</id>
+  <nome>Pedro Rocha</nome>
+  <email>pedro@email.com</email>
+  <telefone>987654321</telefone>
+</Cliente>

@@ -18,7 +18,7 @@ namespace ExemploServicoWCF
 
         public Produto PromocaoDia()
         {
-            return new Produto() { id = 1, nome = "Mouse", preco = 10.99M };
+            return new Produto() { id = 1, nome = "Mouse", preco = 15.99M };
         }
     }
 }

@@ -51,6 +51,7 @@ C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediari
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ExemploServicoWCF\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ExemploServicoWCF\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ExemploServicoWCF\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ExemploServicoWCF\obj\Debug\ServicoWCF.csprojAssemblyReference.cache
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ExemploServicoWCF\obj\Debug\ServicoWCF.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ExemploServicoWCF\obj\Debug\ServicoWCF.csproj.CopyComplete
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\ExemploServicoWCF\ExemploServicoWCF\obj\Debug\ExemploServicoWCF.dll

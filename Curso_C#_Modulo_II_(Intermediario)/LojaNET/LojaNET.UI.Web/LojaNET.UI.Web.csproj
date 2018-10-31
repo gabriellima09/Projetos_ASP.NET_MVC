@@ -144,17 +144,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Codigo\AppContainer.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Clientes_Excluidos\2c82c78d-0aac-4d5c-a38e-4306f25ea55a.xml" />
+    <Content Include="App_Data\Clientes_Excluidos\366f0f35-471c-4521-b38d-3237bb96d25b.xml" />
+    <Content Include="App_Data\Clientes_Excluidos\3cc17ef7-eb6d-481b-acd1-2d7f644994bb.xml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -196,9 +201,13 @@
     <Content Include="Views\Cliente\Detalhes.cshtml" />
     <Content Include="Views\Cliente\Alterar.cshtml" />
     <Content Include="Views\Cliente\Excluir.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Produto\Incluir.cshtml" />
+    <Content Include="Views\Produto\Alterar.cshtml" />
+    <Content Include="Views\Produto\Excluir.cshtml" />
+    <Content Include="Views\Produto\Detalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +227,10 @@
     <ProjectReference Include="..\LojaNET.BLL\LojaNET.BLL.csproj">
       <Project>{4754e3b4-f79c-44b2-a432-026dc94e07e0}</Project>
       <Name>LojaNET.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LojaNET.DAL\LojaNET.DAL.csproj">
+      <Project>{8125cec3-0dd9-48f1-b78d-e874481275ff}</Project>
+      <Name>LojaNET.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\LojaNET.Models\LojaNET.Models.csproj">
       <Project>{62ca5d0f-dcbe-44ae-b6af-0d45f00cc3fa}</Project>

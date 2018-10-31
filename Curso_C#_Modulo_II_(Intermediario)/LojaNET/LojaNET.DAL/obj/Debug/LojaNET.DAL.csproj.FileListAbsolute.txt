@@ -1,7 +1,12 @@
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\LojaNET.DAL.dll.config
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\LojaNET.DAL.dll
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\LojaNET.DAL.pdb
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\LojaNET.Models.dll
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\LojaNET.Models.pdb
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\obj\Debug\LojaNET.DAL.csprojAssemblyReference.cache
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\obj\Debug\LojaNET.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.DAL\obj\Debug\LojaNET.DAL.csproj.CopyComplete

@@ -3,4 +3,3 @@ C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediari
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.Models\obj\Debug\LojaNET.Models.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.Models\obj\Debug\LojaNET.Models.dll
 C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.Models\obj\Debug\LojaNET.Models.pdb
-C:\Users\Gabriel\Documents\Projetos_ASP.NET_MVC\Curso_C#_Modulo_II_(Intermediario)\LojaNET\LojaNET.Models\obj\Debug\LojaNET.Models.csprojAssemblyReference.cache

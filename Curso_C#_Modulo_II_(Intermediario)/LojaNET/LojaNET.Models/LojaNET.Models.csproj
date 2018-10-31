@@ -45,6 +45,7 @@
     <Compile Include="Dominio\Pedido.cs" />
     <Compile Include="Dominio\Produto.cs" />
     <Compile Include="Interfaces\ICliente.cs" />
+    <Compile Include="Interfaces\IProduto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

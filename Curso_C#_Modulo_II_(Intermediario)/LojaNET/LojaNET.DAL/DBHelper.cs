@@ -11,7 +11,7 @@ namespace LojaNET.DAL
 {
     public static class DBHelper
     {
-        private static string connString
+        public static string connString
         {
             get
             {

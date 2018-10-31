@@ -1,4 +1,5 @@
-﻿using LojaNet.Models;
+﻿using LojaNet.DAL;
+using LojaNet.Models;
 using LojaNET.BLL;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,11 @@ namespace LojaNET.UI.Web.Controllers
 {
     public class ClienteController : Controller
     {
-        private ClienteBLL bll;
+        private ICliente bll;
 
         public ClienteController()
         {
-            bll = new ClienteBLL();
+            bll = AppContainer.ObterClienteBLL();
         }
 
         // GET: Cliente

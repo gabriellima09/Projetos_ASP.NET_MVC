@@ -9,7 +9,8 @@ namespace LojaNet.DAL
 {
     public class ClienteDAL : ICliente
     {
-        private readonly string pathSerializacao = HttpContext.Current.Server.MapPath(@"~\App_Data\Clientes_Excluidos\");
+        private readonly string pathSerializacao = @"~\App_Data\Clientes_Excluidos\";
+        //private readonly string pathSerializacao = HttpContext.Current.Server.MapPath(@"~\App_Data\Clientes_Excluidos\");
 
         public void Alterar(Cliente cliente)
         {
@@ -42,6 +43,9 @@ namespace LojaNet.DAL
 
         public Cliente ObterPorEmail(string email)
         {
+            if (string.IsNullOrEmpty(email))
+                throw new ApplicationException("O email deve ser informado");
+
             Cliente cliente = null;
 
             using (var reader = DBHelper.ExecuteReader("SP_CLIENTE_SELECT_BY_EMAIL", "@email", email))

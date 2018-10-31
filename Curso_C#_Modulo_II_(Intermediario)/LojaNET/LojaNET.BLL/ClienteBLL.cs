@@ -11,11 +11,11 @@ namespace LojaNET.BLL
 {
     public class ClienteBLL : ICliente
     {
-        private ClienteDAL dal;
+        private ICliente dal;
 
-        public ClienteBLL()
+        public ClienteBLL(ICliente cliente)
         {
-            this.dal = new ClienteDAL();
+            dal = cliente;
         }
 
         public void Alterar(Cliente cliente)

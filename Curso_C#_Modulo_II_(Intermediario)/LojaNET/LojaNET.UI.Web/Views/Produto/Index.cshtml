@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LojaNet.Models.Produto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Produtos</h2>
+
+<hr />
+
+<div class="form-group">
+    @Html.ActionLink("Novo", "Incluir", "Produto", new { @class = "btn btn-primary" })
+</div>
+
+<div class="form-group">
+    <table class="table table-bordered table-hover table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(produto.nome, "Detalhes", "Produto", new { id = produto.id }, htmlAttributes: null)
+                    </td>
+                    <td>@produto.preco.ToString("c")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

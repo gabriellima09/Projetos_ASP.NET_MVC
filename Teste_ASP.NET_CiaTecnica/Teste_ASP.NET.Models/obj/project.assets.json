@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel\\Documents\\Teste_ASP.NET_CiaTecnica\\Teste_ASP.NET.Models\\Teste_ASP.NET.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel\\Documents\\Projetos_ASP.NET_MVC\\Teste_ASP.NET_CiaTecnica\\Teste_ASP.NET.Models\\Teste_ASP.NET.Models.csproj",
       "projectName": "Teste_ASP.NET.Models",
-      "projectPath": "C:\\Users\\Gabriel\\Documents\\Teste_ASP.NET_CiaTecnica\\Teste_ASP.NET.Models\\Teste_ASP.NET.Models.csproj",
+      "projectPath": "C:\\Users\\Gabriel\\Documents\\Projetos_ASP.NET_MVC\\Teste_ASP.NET_CiaTecnica\\Teste_ASP.NET.Models\\Teste_ASP.NET.Models.csproj",
       "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel\\Documents\\Teste_ASP.NET_CiaTecnica\\Teste_ASP.NET.Models\\obj\\",
+      "outputPath": "C:\\Users\\Gabriel\\Documents\\Projetos_ASP.NET_MVC\\Teste_ASP.NET_CiaTecnica\\Teste_ASP.NET.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

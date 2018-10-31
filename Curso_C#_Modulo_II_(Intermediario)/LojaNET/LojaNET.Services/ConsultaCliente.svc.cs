@@ -1,4 +1,5 @@
-﻿using LojaNET.BLL;
+﻿using LojaNet.DAL;
+using LojaNET.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,9 @@ namespace LojaNET.Services
 
             ClienteInfo clienteInfo = null;
 
-            var bll = new ClienteBLL();
+            var dal = new ClienteDAL();
+            
+            var bll = new ClienteBLL(dal);
             var cliente = bll.ObterPorEmail(email);
 
             if (cliente != null)

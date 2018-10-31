@@ -1,0 +1,30 @@
+﻿@model LojaNet.Models.Produto
+
+@{
+    ViewBag.Title = "Incluir";
+}
+
+<h2>Novo Produto</h2>
+
+<hr />
+
+@using (Html.BeginForm("Incluir", "Produto", FormMethod.Post, new { @id = "FormProduto", @class = "form-vertical" }))
+{
+
+    @Html.ValidationSummary(null, new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label class="control-label" for="nome">Nome: </label>
+        @Html.TextBoxFor(x => Model.nome, new { @class = "form-control", @placeholder = "Digite o nome" })
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="telefone">Preço: </label>
+        @Html.TextBoxFor(x => Model.preco, new { @type = "text", @class = "form-control", @placeholder = "Digite o preço" })
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="email">Qtd Estoque: </label>
+        @Html.TextBoxFor(x => Model.estoque, new { @type = "number", @class = "form-control", @placeholder = "Digite a quantidade no estoque" })
+    </div>
+
+    <button class="btn btn-success" type="submit">Cadastrar</button>
+}
